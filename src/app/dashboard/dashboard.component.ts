@@ -10,8 +10,10 @@ import { Chart } from 'chart.js/auto';
 })
 export class DashboardComponent {
   data: SleepData[] | undefined;
-  difference: Number[] | undefined = []
-  chart: any = [];
+  differenceSleep: Number[] | undefined = []
+  differenceNap: Number[] | undefined = []
+  chartSleep: any = [];
+  chartNap: any = [];
 
   constructor(private service: SleepService) {
     this.displayInfo();
@@ -20,14 +22,14 @@ export class DashboardComponent {
   
   ngAfterViewInit() { 
     this.getData(); 
-    this.chart = new Chart('canvas', {
+    this.chartSleep = new Chart('canvas', {
       type: 'line',
       data: {
         labels: [1,2,3,4,5,6,7],
         datasets: [
           {
             label: "Hours Slept",
-            data: this.difference,
+            data: this.differenceSleep,
             backgroundColor: 'blue'
           }
         ]
@@ -38,9 +40,32 @@ export class DashboardComponent {
           padding: 30
         },
         responsive: true,
-        maintainAspectRatio: true
       }
     })
+
+    this.chartNap = new Chart('napCanvas', {
+      type: 'line',
+      data: {
+        labels: [1,2,3,4,5,6,7],
+        datasets: [
+          {
+            label: "Hours Napped",
+            data: this.differenceNap,
+            backgroundColor: 'orange'
+          }
+        ]
+      },
+      options: {
+        aspectRatio: 2.5,
+        layout: {
+          padding: 30
+        },
+        responsive: true,
+      }
+    })
+
+    this.chartSleep()
+    this.chartNap()
   }
 
   date: Date = new Date(2017, 4, 6, 17, 23, 42);
@@ -60,7 +85,13 @@ export class DashboardComponent {
     for(let day of this.data) {
       let diffMs = day.end.getTime() - day.start.getTime()
       let diffHrs = Math.floor((diffMs % 86400000) / 3600000)
-      this.difference?.push(diffHrs)
+      let diffMin = Math.round(((diffMs % 86400000) % 3600000) / 60000) / 60
+      if (day.type === "Sleep") {
+        this.differenceSleep?.push(diffHrs)
+      } else {
+        this.differenceNap?.push(diffHrs + diffMin)
+      }
+      
     }
   }
 }

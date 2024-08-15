@@ -1,4 +1,8 @@
 <h1>Last 7 Sleep Sessions</h1>
-<div *ngIf="chart" class="d-flex justify-content-center" style="height: 50vh; width: 90vw;">
-    <canvas id="canvas">{{ chart }}</canvas>
+<div *ngIf="chartSleep" class="d-flex justify-content-center" style="height: 50vh; width: 90vw;">
+    <canvas id="canvas">{{ chartSleep }}</canvas>
+</div>
+
+<div *ngIf="chartNap" class="d-flex justify-content-center" style="height: 50vh; width: 90vw;">
+    <canvas id="napCanvas">{{ chartNap }}</canvas>
 </div>
