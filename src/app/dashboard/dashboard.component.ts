@@ -50,7 +50,7 @@ export class DashboardComponent {
         datasets: [
           {
             label: "Hours Napped",
-            data: this.differenceNap?.reverse().slice(0, 7),
+            data: this.differenceNap?.reverse().slice(0, 7).reverse(),
             backgroundColor: 'orange'
           }
         ]
