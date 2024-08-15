@@ -10,8 +10,10 @@ import { Chart } from 'chart.js/auto';
 })
 export class DashboardComponent {
   data: SleepData[] | undefined;
-  differenceSleep: Number[] | undefined = []
-  differenceNap: Number[] | undefined = []
+  differenceSleep: number[] = []
+  differenceNap: number[] = []
+  averageSleep: number = 0;
+  averageNap: number = 0;
   chartSleep: any = [];
   chartNap: any = [];
 
@@ -94,5 +96,16 @@ export class DashboardComponent {
     }
     this.differenceSleep = this.differenceSleep?.reverse().slice(0,7).reverse()
     this.differenceNap = this.differenceNap?.reverse().slice(0,7).reverse()
+    
+    this.averageSleep = this.getAverage(this.differenceSleep)
+    this.averageNap = this.getAverage(this.differenceNap)
+  }
+
+  getAverage(arr: number[]) : number {
+    let total = 0
+    for(let num of arr) {
+      total = total + num;
+    }
+    return Math.round((total / arr.length) * 100) / 100;
   }
 }

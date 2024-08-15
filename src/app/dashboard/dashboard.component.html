@@ -1,8 +1,20 @@
+<div class="d-flex justify-content-center">
+    <div class="mx-4">
+        <h2>Average Sleep Time</h2>
+        <h3 class="text-center">{{averageSleep}} Hours</h3>
+    </div>
+    <div class="mx-4">
+        <h2>Average Nap Time</h2>
+        <h3 class="text-center">{{averageNap}} Hours</h3>
+    </div>
+</div>
+
 <h1>Last 7 Sleep Sessions</h1>
 <div *ngIf="chartSleep" class="d-flex justify-content-center" style="height: 50vh; width: 90vw;">
     <canvas id="canvas">{{ chartSleep }}</canvas>
 </div>
-
+<br>
+<h1>Last 7 Nap Sessions</h1>
 <div *ngIf="chartNap" class="d-flex justify-content-center" style="height: 50vh; width: 90vw;">
     <canvas id="napCanvas">{{ chartNap }}</canvas>
 </div>
