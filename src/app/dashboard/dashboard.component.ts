@@ -87,7 +87,7 @@ export class DashboardComponent {
       let diffHrs = Math.floor((diffMs % 86400000) / 3600000)
       let diffMin = Math.round(((diffMs % 86400000) % 3600000) / 60000) / 60
       if (day.type === "Sleep") {
-        this.differenceSleep?.push(diffHrs)
+        this.differenceSleep?.push(diffHrs + diffMin)
       } else {
         this.differenceNap?.push(diffHrs + diffMin)
       }
