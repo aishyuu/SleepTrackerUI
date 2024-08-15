@@ -29,7 +29,7 @@ export class DashboardComponent {
         datasets: [
           {
             label: "Hours Slept",
-            data: this.differenceSleep?.reverse().slice(0, 7).reverse(),
+            data: this.differenceSleep,
             backgroundColor: 'blue'
           }
         ]
@@ -50,7 +50,7 @@ export class DashboardComponent {
         datasets: [
           {
             label: "Hours Napped",
-            data: this.differenceNap?.reverse().slice(0, 7).reverse(),
+            data: this.differenceNap,
             backgroundColor: 'orange'
           }
         ]
@@ -91,7 +91,8 @@ export class DashboardComponent {
       } else {
         this.differenceNap?.push(diffHrs + diffMin)
       }
-      
     }
+    this.differenceSleep = this.differenceSleep?.reverse().slice(0,7).reverse()
+    this.differenceNap = this.differenceNap?.reverse().slice(0,7).reverse()
   }
 }

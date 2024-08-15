@@ -133,8 +133,8 @@ export class SleepService {
       {
         "id": 5,
         "type": "Sleep",
-        "start": new Date(2024, 8, 17, 21, 0),
-        "end": new Date(2024, 8, 18, 7, 0)
+        "start": new Date(2024, 8, 17, 21, 50),
+        "end": new Date(2024, 8, 18, 4, 10)
       },
     ]
 
