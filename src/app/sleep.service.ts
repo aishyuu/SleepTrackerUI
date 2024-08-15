@@ -93,7 +93,49 @@ export class SleepService {
         "type": "Nap",
         "start": new Date(2024, 8, 19, 16, 0),
         "end": new Date (2024, 8, 19, 17, 0)
-      }
+      },
+      {
+        "id": 5,
+        "type": "Sleep",
+        "start": new Date(2024, 8, 17, 21, 0),
+        "end": new Date(2024, 8, 18, 7, 0)
+      },
+      {
+        "id": 5,
+        "type": "Sleep",
+        "start": new Date(2024, 8, 17, 21, 0),
+        "end": new Date(2024, 8, 18, 7, 0)
+      },
+      {
+        "id": 5,
+        "type": "Sleep",
+        "start": new Date(2024, 8, 17, 21, 0),
+        "end": new Date(2024, 8, 18, 7, 0)
+      },
+      {
+        "id": 5,
+        "type": "Sleep",
+        "start": new Date(2024, 8, 17, 21, 0),
+        "end": new Date(2024, 8, 18, 7, 0)
+      },
+      {
+        "id": 5,
+        "type": "Sleep",
+        "start": new Date(2024, 8, 17, 21, 0),
+        "end": new Date(2024, 8, 18, 7, 0)
+      },
+      {
+        "id": 5,
+        "type": "Sleep",
+        "start": new Date(2024, 8, 17, 21, 0),
+        "end": new Date(2024, 8, 18, 7, 0)
+      },
+      {
+        "id": 5,
+        "type": "Sleep",
+        "start": new Date(2024, 8, 17, 21, 0),
+        "end": new Date(2024, 8, 18, 7, 0)
+      },
     ]
 
     return sleepData

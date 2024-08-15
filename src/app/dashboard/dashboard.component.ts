@@ -29,7 +29,7 @@ export class DashboardComponent {
         datasets: [
           {
             label: "Hours Slept",
-            data: this.differenceSleep,
+            data: this.differenceSleep?.reverse().slice(0, 7).reverse(),
             backgroundColor: 'blue'
           }
         ]
@@ -50,7 +50,7 @@ export class DashboardComponent {
         datasets: [
           {
             label: "Hours Napped",
-            data: this.differenceNap,
+            data: this.differenceNap?.reverse().slice(0, 7),
             backgroundColor: 'orange'
           }
         ]
