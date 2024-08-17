@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Type</th>
+      <th scope="col">Start</th>
+      <th scope="col">End</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let day of data">
+      <th scope="row">{{ day.id }}</th>
+      <td>{{ day.type }}</td>
+      <td>{{ day.startTime }}</td>
+      <td>{{ day.endTime }}</td>
+    </tr>
+  </tbody>
+</table>
