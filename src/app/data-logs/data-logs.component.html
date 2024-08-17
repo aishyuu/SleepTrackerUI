@@ -1,3 +1,11 @@
+<div class="d-flex justify-content-center my-4">
+    <a routerLink="/new-log">
+        <button type="button" class="btn btn-secondary">
+            Create New Log
+        </button>
+    </a>
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -11,8 +19,8 @@
     <tr *ngFor="let day of data">
       <th scope="row">{{ day.id }}</th>
       <td>{{ day.type }}</td>
-      <td>{{ day.startTime }}</td>
-      <td>{{ day.endTime }}</td>
+      <td>{{ day.startTime.toLocaleString() }}</td>
+      <td>{{ day.endTime.toLocaleString() }}</td>
     </tr>
   </tbody>
 </table>

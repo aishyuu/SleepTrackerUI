@@ -18,7 +18,15 @@ export class DataLogsComponent {
   getData(): void {
     this.service.getData().subscribe((data: SleepData[]) => {
       this.data = data.reverse();
+      this.adjustDateType();
     })
+  }
+
+  adjustDateType():void {
+    for (let day of this.data) {
+      day.startTime = new Date(day.startTime);
+      day.endTime = new Date(day.endTime);
+    }
   }
 
 }

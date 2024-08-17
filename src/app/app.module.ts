@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DataLogsComponent } from './data-logs/data-logs.component';
+import { NewLogComponent } from './new-log/new-log.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     DataLogsComponent,
+    NewLogComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
