@@ -1,1 +1,21 @@
-<p>new-log works!</p>
+<div class="m-4">
+    <form (ngSubmit)="onSubmit()">
+        <label for="type-select">Type</label>
+        <select [(ngModel)]="model.type" name="something" required>
+            <option *ngFor="let o of options" [value]="o">{{o}}</option>
+        </select>
+        <br>
+        <label for="startTime">Choose Start Time:</label>
+        <input type="datetime-local" id="startTime" name="startInput" [(ngModel)]="model.startTime" placeholder="yyyy-MM-ddTHH:mm:ss">
+        <br>
+        <label for="endTime">Choose End Time:</label>
+        <input type="datetime-local" id="endTime" name="endInput" [(ngModel)]="model.endTime" placeholder="yyyy-MM-ddTHH:mm:ss">
+        <br>
+        <button type="submit" class="btn btn-primary">Submit Wooooo</button>
+    </form>
+</div>
+
+<div>
+    <h1>Start Time {{model.startTime}}</h1>
+    <h1>End Time {{model.endTime}}</h1>
+</div>

@@ -14,6 +14,10 @@ export class SleepService {
     return this.http.get<SleepData[]>(`${this.url}`)
   }
 
+  postData(data: SleepData) {
+    return this.http.post<SleepData[]>(`${this.url}`, data)
+  }
+
   getFakeData() {
     let sleepData: SleepData[] = [
       {

@@ -1,5 +1,5 @@
 export interface SleepData {
-    id: Number,
+    id?: Number,
     type: String,
     startTime: Date,
     endTime: Date
